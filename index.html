@@ -1,273 +1,1908 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Character Encoding -->
     <meta charset="UTF-8">
-
-    <!-- Responsive Design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Page Title -->
-    <title>Renu Store Pro | Grocery & General Store</title>
+    <title>Renu Store Pro | Fresh Groceries Delivered Fast</title>
 
-    <!-- SEO -->
-    <meta name="description" content="Renu Store Pro - Fresh groceries, daily essentials, beverages, snacks, household items and more at the best prices.">
-    <meta name="keywords" content="grocery store, supermarket, online grocery, daily essentials, Renu Store Pro">
+    <meta name="description"
+          content="Renu Store Pro - Fresh groceries, fruits, vegetables, dairy, snacks, beverages and daily essentials at affordable prices.">
+
+    <meta name="keywords"
+          content="Renu Store Pro, grocery store, online grocery, fruits, vegetables, dairy, snacks, beverages, Jamshedpur">
+
     <meta name="author" content="Renu Store Pro">
-
-    <!-- Robots -->
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#087f3f">
 
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#16a34a">
+    <link rel="icon" href="favicon.png" type="image/png">
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.png" type="png">
-
-    <!-- Google Fonts -->
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
+    <!-- Existing CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="animations.css">
-    
+
+    <style>
+        /* =========================================================
+           RENU STORE PRO - MODERN GROCERY HOMEPAGE
+           ========================================================= */
+
+        :root {
+            --green: #087f3f;
+            --green-dark: #056b34;
+            --green-light: #eaf8ed;
+            --orange: #ff7a00;
+            --red: #ef4444;
+            --black: #17201b;
+            --gray: #68736d;
+            --light: #f7faf7;
+            --white: #ffffff;
+            --border: #e8eee9;
+            --radius: 16px;
+            --shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fff;
+            color: var(--black);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .modern-container {
+            width: min(1200px, 94%);
+            margin: auto;
+        }
+
+        /* =========================================================
+           TOP BAR
+           ========================================================= */
+
+        .top-bar {
+            background: var(--green);
+            color: white;
+            font-size: 12px;
+            padding: 7px 0;
+        }
+
+        .top-bar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
+        .modern-header {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .main-header {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .modern-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 185px;
+        }
+
+        .modern-logo img {
+            width: 43px;
+            height: 43px;
+            object-fit: contain;
+        }
+
+        .logo-title {
+            color: var(--green);
+            font-size: 21px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .logo-subtitle {
+            color: #7a837e;
+            font-size: 9px;
+        }
+
+        /* Search */
+
+        .modern-search {
+            flex: 1;
+            height: 46px;
+            border: 1px solid #e2e8e4;
+            border-radius: 25px;
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,.04);
+        }
+
+        .modern-search input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0 20px;
+            font-family: inherit;
+            font-size: 13px;
+            color: var(--black);
+        }
+
+        .modern-search button {
+            width: 95px;
+            border: none;
+            background: var(--green);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .modern-search button:hover {
+            background: var(--green-dark);
+        }
+
+        /* Header actions */
+
+        .header-action-area {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .header-action {
+            color: #26302a;
+            font-size: 13px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-action .icon {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 1px;
+        }
+
+        .header-action:hover {
+            color: var(--green);
+        }
+
+        .badge-count {
+            position: absolute;
+            top: -5px;
+            right: -9px;
+            min-width: 17px;
+            height: 17px;
+            padding: 0 4px;
+            border-radius: 20px;
+            background: var(--green);
+            color: white;
+            font-size: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* =========================================================
+           CATEGORY NAVIGATION
+           ========================================================= */
+
+        .category-nav {
+            border-top: 1px solid #f0f3f1;
+            border-bottom: 1px solid var(--border);
+            background: white;
+        }
+
+        .category-nav-inner {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            height: 47px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .category-nav-inner::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-nav a {
+            white-space: nowrap;
+            font-size: 12px;
+            font-weight: 500;
+            color: #26302a;
+        }
+
+        .category-nav a:hover {
+            color: var(--green);
+        }
+
+        .all-category {
+            font-weight: 700 !important;
+        }
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+
+        .hero-modern {
+            margin-top: 16px;
+        }
+
+        .hero-box {
+            min-height: 310px;
+            border-radius: 18px;
+            overflow: hidden;
+            background: linear-gradient(100deg, #eefbe9, #f7fff5);
+            display: grid;
+            grid-template-columns: 44% 56%;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-copy {
+            padding: 35px 20px 35px 45px;
+            z-index: 2;
+        }
+
+        .hero-offer {
+            display: inline-block;
+            background: #fff;
+            color: var(--orange);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-bottom: 13px;
+        }
+
+        .hero-copy h1 {
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.08;
+            margin: 0 0 12px;
+            font-weight: 800;
+        }
+
+        .hero-copy h1 span {
+            color: var(--green);
+        }
+
+        .hero-copy p {
+            color: #68736d;
+            font-size: 13px;
+            line-height: 1.7;
+            max-width: 440px;
+            margin-bottom: 20px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .hero-btn {
+            padding: 11px 20px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-btn-primary {
+            background: var(--green);
+            color: white;
+        }
+
+        .hero-btn-primary:hover {
+            background: var(--green-dark);
+        }
+
+        .hero-btn-secondary {
+            background: white;
+            color: var(--green);
+            border: 1px solid var(--green);
+        }
+
+        .hero-btn-secondary:hover {
+            background: var(--green-light);
+        }
+
+        .hero-image-area {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 25px 10px 0;
+        }
+
+        .hero-image-area img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .hero-discount {
+            position: absolute;
+            right: 35px;
+            top: 28px;
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 3;
+        }
+
+        .hero-discount small {
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .hero-discount strong {
+            font-size: 22px;
+            color: var(--orange);
+            line-height: 1;
+        }
+
+        .hero-discount span {
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 22px;
+            margin-top: 18px;
+            font-size: 10px;
+            font-weight: 500;
+            color: #4c5952;
+        }
+
+        .hero-dots {
+            position: absolute;
+            bottom: 9px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 7px;
+        }
+
+        .hero-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #cbd8ce;
+        }
+
+        .hero-dot.active {
+            background: var(--green);
+        }
+
+        /* =========================================================
+           SECTION COMMON
+           ========================================================= */
+
+        .modern-section {
+            padding: 28px 0 5px;
+        }
+
+        .section-heading-modern {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .section-heading-modern h2 {
+            font-size: 19px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .section-heading-modern a {
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* =========================================================
+           QUICK CATEGORY CARDS
+           ========================================================= */
+
+        .quick-categories {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 12px;
+        }
+
+        .quick-category {
+            height: 102px;
+            border: 1px solid #edf1ee;
+            border-radius: 14px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: .25s;
+            box-shadow: 0 2px 8px rgba(0,0,0,.025);
+        }
+
+        .quick-category:hover {
+            transform: translateY(-3px);
+            border-color: #b7dfc2;
+            box-shadow: var(--shadow);
+        }
+
+        .quick-category img {
+            height: 50px;
+            width: 62px;
+            object-fit: contain;
+        }
+
+        .quick-category span {
+            font-size: 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .more-category {
+            font-size: 27px;
+            color: var(--green);
+        }
+
+        /* =========================================================
+           PRODUCT CARDS
+           ========================================================= */
+
+        .product-row {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+        }
+
+        .modern-product {
+            background: white;
+            border: 1px solid #e7ece8;
+            border-radius: 13px;
+            padding: 9px;
+            position: relative;
+            min-width: 0;
+            transition: .25s;
+        }
+
+        .modern-product:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            z-index: 2;
+            background: #ff4757;
+            color: white;
+            border-radius: 3px;
+            padding: 3px 6px;
+            font-size: 8px;
+            font-weight: 700;
+        }
+
+        .rating-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            z-index: 2;
+            background: var(--green);
+            color: white;
+            border-radius: 3px;
+            padding: 3px 6px;
+            font-size: 8px;
+            font-weight: 700;
+        }
+
+        .wishlist-small {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            border: none;
+            background: white;
+            font-size: 17px;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .product-image-wrap {
+            height: 145px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .product-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .modern-product h3 {
+            font-size: 11px;
+            line-height: 1.4;
+            min-height: 31px;
+            margin: 4px 0;
+            font-weight: 600;
+        }
+
+        .product-unit {
+            font-size: 9px;
+            color: #7a847e;
+        }
+
+        .price-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 7px;
+        }
+
+        .product-price {
+            font-size: 14px;
+            font-weight: 800;
+            color: #101712;
+        }
+
+        .old-price {
+            color: #98a19b;
+            text-decoration: line-through;
+            font-size: 9px;
+            margin-left: 4px;
+        }
+
+        .add-btn {
+            border: 1px solid #35a75e;
+            background: white;
+            color: var(--green);
+            padding: 5px 11px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .add-btn:hover {
+            background: var(--green);
+            color: white;
+        }
+
+        /* =========================================================
+           OFFER BANNERS
+           ========================================================= */
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .offer-card {
+            min-height: 105px;
+            border-radius: 14px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .offer-card:nth-child(1) {
+            background: #dff5c8;
+        }
+
+        .offer-card:nth-child(2) {
+            background: #fff0ad;
+        }
+
+        .offer-card:nth-child(3) {
+            background: #dff5c8;
+        }
+
+        .offer-card h3 {
+            font-size: 15px;
+            margin: 0 0 5px;
+        }
+
+        .offer-card p {
+            margin: 0;
+            color: #4c584f;
+            font-size: 10px;
+        }
+
+        .offer-card strong {
+            display: block;
+            color: var(--green);
+            font-size: 15px;
+            margin-top: 3px;
+        }
+
+        .offer-card img {
+            width: 110px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        /* =========================================================
+           SHOP CATEGORY
+           ========================================================= */
+
+        .shop-category-row {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 12px;
+        }
+
+        .shop-category {
+            text-align: center;
+        }
+
+        .shop-category-image {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: #f0f4f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .shop-category-image img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .shop-category span {
+            display: block;
+            margin-top: 8px;
+            font-size: 9px;
+            font-weight: 600;
+        }
+
+        /* =========================================================
+           WHY CHOOSE US
+           ========================================================= */
+
+        .benefit-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: #f5faf6;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .benefit {
+            padding: 17px;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .benefit-icon {
+            width: 42px;
+            height: 42px;
+            background: #e4f8e8;
+            color: var(--green);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .benefit h4 {
+            margin: 0;
+            font-size: 11px;
+        }
+
+        .benefit p {
+            margin: 2px 0 0;
+            font-size: 8px;
+            color: #748078;
+        }
+
+        /* =========================================================
+           TESTIMONIALS
+           ========================================================= */
+
+        .testimonial-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .modern-testimonial {
+            border: 1px solid #e8ede9;
+            background: white;
+            border-radius: 14px;
+            padding: 18px;
+        }
+
+        .customer-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .customer-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .customer-name {
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .verified {
+            color: var(--green);
+            font-size: 8px;
+            display: block;
+        }
+
+        .stars {
+            color: #ffb000;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .modern-testimonial p {
+            font-size: 9px;
+            line-height: 1.7;
+            color: #626c65;
+            margin: 12px 0 0;
+        }
+
+        /* =========================================================
+           NEWSLETTER
+           ========================================================= */
+
+        .newsletter-modern {
+            margin: 28px 0 0;
+            border-radius: 15px;
+            padding: 22px 30px;
+            background: linear-gradient(100deg, #006b35, #078947);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .newsletter-modern h2 {
+            font-size: 18px;
+            margin: 0 0 3px;
+        }
+
+        .newsletter-modern p {
+            margin: 0;
+            font-size: 10px;
+        }
+
+        .newsletter-form-modern {
+            width: 390px;
+            height: 40px;
+            background: white;
+            border-radius: 22px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .newsletter-form-modern input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0 16px;
+            font-size: 10px;
+        }
+
+        .newsletter-form-modern button {
+            width: 90px;
+            border: none;
+            background: #25a85a;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        .modern-footer {
+            margin-top: 16px;
+            background: #f5faf6;
+            padding: 35px 0 15px;
+        }
+
+        .footer-grid-modern {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        .footer-brand h2 {
+            color: var(--green);
+            font-size: 18px;
+            margin: 0 0 5px;
+        }
+
+        .footer-brand p {
+            color: #69746d;
+            font-size: 9px;
+            line-height: 1.7;
+        }
+
+        .footer-column h3 {
+            font-size: 11px;
+            margin-bottom: 11px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #667069;
+            font-size: 9px;
+            margin-bottom: 6px;
+        }
+
+        .footer-column a:hover {
+            color: var(--green);
+        }
+
+        .footer-contact p {
+            font-size: 9px;
+            margin-bottom: 7px;
+            color: #667069;
+        }
+
+        .footer-bottom-modern {
+            border-top: 1px solid #dfe8e1;
+            margin-top: 20px;
+            padding-top: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #78827c;
+            font-size: 9px;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 7px;
+            font-weight: 800;
+        }
+
+        .payment-icons span {
+            background: white;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .main-header {
+                gap: 15px;
+            }
+
+            .modern-logo {
+                min-width: auto;
+            }
+
+            .logo-title {
+                font-size: 17px;
+            }
+
+            .header-action-area {
+                gap: 10px;
+            }
+
+            .product-row {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .quick-categories,
+            .shop-category-row {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .benefit-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid-modern {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .top-bar {
+                font-size: 9px;
+            }
+
+            .top-bar-inner {
+                gap: 10px;
+            }
+
+            .top-bar-inner span:last-child {
+                display: none;
+            }
+
+            .main-header {
+                min-height: auto;
+                padding: 10px 0;
+                flex-wrap: wrap;
+            }
+
+            .modern-logo {
+                flex: 1;
+            }
+
+            .header-action-area {
+                gap: 12px;
+            }
+
+            .header-action span:not(.icon) {
+                display: none;
+            }
+
+            .modern-search {
+                order: 3;
+                flex-basis: 100%;
+                height: 42px;
+            }
+
+            .category-nav-inner {
+                gap: 20px;
+            }
+
+            .hero-box {
+                grid-template-columns: 1fr;
+                min-height: 510px;
+            }
+
+            .hero-copy {
+                padding: 30px 22px 0;
+                text-align: center;
+            }
+
+            .hero-copy h1 {
+                font-size: 32px;
+            }
+
+            .hero-copy p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons,
+            .hero-features {
+                justify-content: center;
+            }
+
+            .hero-features {
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .hero-image-area {
+                padding: 0 15px 25px;
+                height: 230px;
+            }
+
+            .hero-discount {
+                width: 67px;
+                height: 67px;
+                right: 15px;
+                top: 15px;
+            }
+
+            .hero-discount strong {
+                font-size: 17px;
+            }
+
+            .quick-categories {
+                display: flex;
+                overflow-x: auto;
+                scrollbar-width: none;
+            }
+
+            .quick-categories::-webkit-scrollbar {
+                display: none;
+            }
+
+            .quick-category {
+                min-width: 100px;
+            }
+
+            .product-row {
+                display: flex;
+                overflow-x: auto;
+                scrollbar-width: none;
+                padding-bottom: 8px;
+            }
+
+            .product-row::-webkit-scrollbar {
+                display: none;
+            }
+
+            .modern-product {
+                min-width: 165px;
+            }
+
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .shop-category-row {
+                display: flex;
+                overflow-x: auto;
+                scrollbar-width: none;
+            }
+
+            .shop-category-row::-webkit-scrollbar {
+                display: none;
+            }
+
+            .shop-category {
+                min-width: 90px;
+            }
+
+            .benefit-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .benefit {
+                padding: 12px;
+            }
+
+            .testimonial-row {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-modern {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            .newsletter-form-modern {
+                width: 100%;
+            }
+
+            .footer-grid-modern {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
+
+            .footer-bottom-modern {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<!-- ===== Header Start ===== -->
-<header class="header">
 
-    <div class="container">
+<!-- =========================================================
+     TOP BAR
+     ========================================================= -->
 
-        <!-- Logo -->
-        <a href="index.html" class="logo">
-            <img src="favicon.png" alt="Renu Store Pro Logo">
-            <span>Renu Store Pro</span>
+<div class="top-bar">
+    <div class="modern-container top-bar-inner">
+        <span>📍 Delivering to: Jamshedpur, 831007 ▾</span>
+        <span>🚚 Free Delivery on orders above ₹499</span>
+        <span>📱 Download App &nbsp;&nbsp; ↻ Track Order</span>
+    </div>
+</div>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="modern-header">
+
+    <div class="modern-container main-header">
+
+        <a href="index.html" class="modern-logo">
+            <img src="favicon.png" alt="Renu Store Pro">
+            <div>
+                <div class="logo-title">Renu Store Pro</div>
+                <div class="logo-subtitle">Fresh. Fast. Trusted.</div>
+            </div>
         </a>
 
-        <!-- Navigation -->
-        <nav class="navbar">
+        <form class="modern-search" action="search.html" method="GET">
+            <input
+                type="search"
+                name="q"
+                placeholder="Search for products (milk, rice, biscuits...)"
+                aria-label="Search products">
 
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <button type="submit">Search</button>
+        </form>
 
-        </nav>
+        <div class="header-action-area">
 
-        <!-- Right Side Icons -->
-        <div class="header-icons">
+            <a href="login.html" class="header-action">
+                <span class="icon">♙</span>
+                <span>Login / Signup</span>
+            </a>
 
-            <a href="search.html" aria-label="Search">🔍</a>
+            <a href="wishlist.html" class="header-action">
+                <span class="icon">♡</span>
+                <span>Wishlist</span>
+                <span class="badge-count">0</span>
+            </a>
 
-            <a href="login.html" aria-label="Login">👤</a>
-
-            <a href="wishlist.html" aria-label="Wishlist">❤️</a>
-
-            <a href="cart.html" aria-label="Cart">🛒</a>
+            <a href="cart.html" class="header-action">
+                <span class="icon">🛒</span>
+                <span>Cart</span>
+                <span class="badge-count" id="cartCount">0</span>
+            </a>
 
         </div>
 
     </div>
 
 </header>
-<!-- ===== Header End ===== -->
 
-<!-- ================= HERO SECTION START ================= -->
-<section class="hero">
 
-    <div class="container hero-content">
+<!-- =========================================================
+     CATEGORY NAVIGATION
+     ========================================================= -->
 
-        <!-- Left Content -->
-        <div class="hero-text">
+<nav class="category-nav">
 
-            <span class="hero-tag">🛒 Welcome to Renu Store Pro</span>
+    <div class="modern-container category-nav-inner">
 
-            <h1>
-                Fresh Groceries <br>
-                Delivered to <span>Your Doorstep</span>
-            </h1>
-
-            <p>
-                Buy fresh fruits, vegetables, dairy products, snacks,
-                beverages and daily essentials at affordable prices with
-                fast delivery and trusted quality.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="products.html" class="btn btn-primary">Shop Now</a>
-
-                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
-            </div>
-
-        </div>
-        <!-- Right Image -->
-        <div class="hero-image">
-            <img src="assets/images/hero-banner.png"
-                 alt="Fresh Grocery Banner">
-        </div>
-
-    </div>
-
-</section>
-<!-- ================= HERO SECTION END ================= -->
-
-<!-- ================= CATEGORIES SECTION ================= -->
-<section class="categories">
-
-    <div class="container">
-
-        <div class="section-title">
-            <h2>Shop by Category</h2>
-            <p>Choose your favorite grocery category</p>
-        </div>
-
-        <div class="category-grid">
-
-            <div class="category-card">
-                <img src="file_00000000c2d882118e694c72a60560ac.png" alt="Fruits">
-                <h3>Fruits</h3>
-            </div>
-
-            <div class="category-card">
-                <img src="file_0000000051948207bc971392adc44dbd.png" alt="Vegetables">
-                <h3>Vegetables</h3>
-            </div>
-
-            <div class="category-card">
-                <img src="file_00000000d86c8207a9f916fa72b67d53.png" alt="Dairy">
-                <h3>Dairy</h3>
-            </div>
-
-            <div class="category-card">
-                <img src="file_00000000eae48207b9b727d513110bf8.png" alt="Snacks">
-                <h3>Snacks</h3>
-            </div>
-
-            <div class="category-card">
-                <img src="file_000000008318820796c7d15036efaec2.png" alt="Beverages">
-                <h3>Beverages</h3>
-            </div>
-
-            <div class="category-card">
-                <img src="file_00000000021c821181cc6aaa1bec2bf1.png" alt="Household">
-                <h3>Household</h3>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ================= END CATEGORIES ================= -->
-<!-- ================= FEATURED PRODUCTS ================= -->
-<section class="featured-products">
-
-    <div class="container">
-
-        <div class="section-title">
-            <h2>Featured Products</h2>
-            <p>Best selling products at affordable prices</p>
-        </div>
-
-        <div class="product-grid">
-
-            <div class="product-card">
-                <img src="file_00000000d86c8207a9f916fa72b67d53.png" alt="Rice">
-                <h3>Basmati Rice</h3>
-                <p class="price">₹499</p>
-                <a href="product.html" class="btn btn-primary">View Product</a>
-            </div>
-
-            <div class="product-card">
-                <img src="file_00000000d86c8207a9f916fa72b67d53.png" alt="Cooking Oil">
-                <h3>Cooking Oil</h3>
-                <p class="price">₹180</p>
-                <a href="product.html" class="btn btn-primary">View Product</a>
-            </div>
-
-            <div class="product-card">
-                <img src="file_00000000d86c8207a9f916fa72b67d53.png" alt="Milk">
-                <h3>Fresh Milk</h3>
-                <p class="price">₹65</p>
-                <a href="product.html" class="btn btn-primary">View Product</a>
-            </div>
-            <div class="product-card">
-                <img src="file_00000000d86c8207a9f916fa72b67d53.png" alt="Biscuits">
-                <h3>Biscuits</h3>
-                <p class="price">₹40</p>
-                <a href="product.html" class="btn btn-primary">View Product</a>
-            </div>
-          <div class="product-card">
-                <img src="file_00000000d86c8207a9f916fa72b67d53.png" alt="Biscuits">
-                <h3>Biscuits</h3>
-                <p class="price">₹40</p>
-                <a href="product.html" class="btn btn-primary">View Product</a>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ================= END FEATURED PRODUCTS ================= -->
-<!-- ================= SPECIAL OFFER ================= -->
-<section class="offer">
-
-    <div class="container offer-content">
-
-        <h2>Special Offer 🎉</h2>
-
-        <p>
-            Get up to <strong>30% OFF</strong> on selected grocery items.
-            Limited time offer. Shop now and save more!
-        </p>
-
-        <a href="products.html" class="btn btn-primary">
-            Shop Offers
+        <a href="products.html" class="all-category">
+            ☰ &nbsp; All Categories
         </a>
 
+        <a href="products.html?category=fruits">Fruits & Vegetables</a>
+        <a href="products.html?category=dairy">Dairy & Breakfast</a>
+        <a href="products.html?category=staples">Staples</a>
+        <a href="products.html?category=snacks">Snacks</a>
+        <a href="products.html?category=beverages">Beverages</a>
+        <a href="products.html?category=personal-care">Personal Care</a>
+        <a href="products.html?category=household">Household</a>
+        <a href="products.html">More⌄</a>
+
+    </div>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="hero-modern">
+
+    <div class="modern-container">
+
+        <div class="hero-box">
+
+            <div class="hero-copy">
+
+                <span class="hero-offer">
+                    BIG SAVINGS
+                </span>
+
+                <h1>
+                    Fresh Groceries<br>
+                    <span>Delivered Fast</span>
+                </h1>
+
+                <p>
+                    Top quality products at best prices.<br>
+                    Get everything you need, delivered to your doorstep.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="products.html"
+                       class="hero-btn hero-btn-primary">
+                        Shop Now
+                    </a>
+
+                    <a href="products.html?offer=true"
+                       class="hero-btn hero-btn-secondary">
+                        View Offers
+                    </a>
+
+                </div>
+
+                <div class="hero-features">
+                    <span>🚚 Fast Delivery</span>
+                    <span>♡ Best Quality</span>
+                    <span>◷ Easy Returns</span>
+                    <span>▣ Secure Payment</span>
+                </div>
+
+            </div>
+
+            <div class="hero-image-area">
+
+                <img
+                    src="assets/images/hero-banner.png"
+                    alt="Fresh groceries delivered fast">
+
+            </div>
+
+            <div class="hero-discount">
+                <small>UP TO</small>
+                <strong>30%</strong>
+                <span>OFF</span>
+            </div>
+
+            <div class="hero-dots">
+                <span class="hero-dot active"></span>
+                <span class="hero-dot"></span>
+                <span class="hero-dot"></span>
+            </div>
+
+        </div>
+
     </div>
 
 </section>
-<!-- ================= END SPECIAL OFFER ================= -->
-<!-- ================= WHY CHOOSE US ================= -->
-<section class="why-us">
 
-    <div class="container">
 
-        <div class="section-title">
+<!-- =========================================================
+     QUICK CATEGORIES
+     ========================================================= -->
+
+<section class="modern-section">
+
+    <div class="modern-container">
+
+        <div class="quick-categories">
+
+            <a href="products.html?category=fruits" class="quick-category">
+                <img src="file_00000000c2d882118e694c72a60560ac.png" alt="Fruits and Vegetables">
+                <span>Fruits & Veg</span>
+            </a>
+
+            <a href="products.html?category=dairy" class="quick-category">
+                <img src="file_00000000d86c8207a9f916fa72b67d53.png" alt="Dairy">
+                <span>Dairy & Eggs</span>
+            </a>
+
+            <a href="products.html?category=staples" class="quick-category">
+                <img src="file_00000000d86c8207a9f916fa72b67d53.png" alt="Staples">
+                <span>Staples</span>
+            </a>
+
+            <a href="products.html?category=snacks" class="quick-category">
+                <img src="file_00000000eae48207b9b727d513110bf8.png" alt="Snacks">
+                <span>Snacks</span>
+            </a>
+
+            <a href="products.html?category=beverages" class="quick-category">
+                <img src="file_000000008318820796c7d15036efaec2.png" alt="Beverages">
+                <span>Beverages</span>
+            </a>
+
+            <a href="products.html?category=personal-care" class="quick-category">
+                <img src="file_00000000d86c8207a9f916fa72b67d53.png" alt="Personal Care">
+                <span>Personal Care</span>
+            </a>
+
+            <a href="products.html?category=household" class="quick-category">
+                <img src="file_00000000021c821181cc6aaa1bec2bf1.png" alt="Household">
+                <span>Household</span>
+            </a>
+
+            <a href="products.html" class="quick-category">
+                <span class="more-category">⊞</span>
+                <span>More</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FLASH DEALS
+     ========================================================= -->
+
+<section class="modern-section">
+
+    <div class="modern-container">
+
+        <div class="section-heading-modern">
+
+            <h2>⚡ Flash Deals <small style="color:#ff6b00;font-size:10px;">⏱ 02h : 15m : 42s</small></h2>
+
+            <a href="products.html?offer=flash">
+                View All
+            </a>
+
+        </div>
+
+        <div class="product-row">
+
+            <article class="modern-product">
+
+                <span class="discount-badge">20% OFF</span>
+
+                <button class="wishlist-small"
+                        aria-label="Add to wishlist">♡</button>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/amul-milk.png"
+                         alt="Amul Taaza Milk">
+                </div>
+
+                <h3>Amul Taaza Milk</h3>
+                <span class="product-unit">1 L</span>
+
+                <div class="price-line">
+                    <div>
+                        <span class="product-price">₹58</span>
+                        <span class="old-price">₹72</span>
+                    </div>
+
+                    <button class="add-btn"
+                            data-product="Amul Taaza Milk"
+                            data-price="58">
+                        Add
+                    </button>
+                </div>
+
+            </article>
+
+
+            <article class="modern-product">
+
+                <span class="discount-badge">15% OFF</span>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/cooking-oil.png"
+                         alt="Fortune Sunlite Oil">
+                </div>
+
+                <h3>Fortune Sunlite Oil</h3>
+                <span class="product-unit">1 L</span>
+
+                <div class="price-line">
+                    <div>
+                        <span class="product-price">₹135</span>
+                        <span class="old-price">₹160</span>
+                    </div>
+
+                    <button class="add-btn"
+                            data-product="Fortune Sunlite Oil"
+                            data-price="135">
+                        Add
+                    </button>
+                </div>
+
+            </article>
+
+
+            <article class="modern-product">
+
+                <span class="discount-badge">25% OFF</span>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/atta.png"
+                         alt="Aashirvaad Select Atta">
+                </div>
+
+                <h3>Aashirvaad Select Atta</h3>
+                <span class="product-unit">5 kg</span>
+
+                <div class="price-line">
+                    <div>
+                        <span class="product-price">₹248</span>
+                        <span class="old-price">₹331</span>
+                    </div>
+
+                    <button class="add-btn"
+                            data-product="Aashirvaad Select Atta"
+                            data-price="248">
+                        Add
+                    </button>
+                </div>
+
+            </article>
+
+
+            <article class="modern-product">
+
+                <span class="discount-badge">30% OFF</span>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/detergent.png"
+                         alt="Surf Excel Matic">
+                </div>
+
+                <h3>Surf Excel Matic Top Load</h3>
+                <span class="product-unit">2 kg</span>
+
+                <div class="price-line">
+                    <div>
+                        <span class="product-price">₹210</span>
+                        <span class="old-price">₹300</span>
+                    </div>
+
+                    <button class="add-btn"
+                            data-product="Surf Excel Matic"
+                            data-price="210">
+                        Add
+                    </button>
+                </div>
+
+            </article>
+
+
+            <article class="modern-product">
+
+                <span class="discount-badge">30% OFF</span>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/biscuits.png"
+                         alt="Britannia Good Day">
+                </div>
+
+                <h3>Britannia Good Day</h3>
+                <span class="product-unit">250 g</span>
+
+                <div class="price-line">
+                    <div>
+                        <span class="product-price">₹40</span>
+                        <span class="old-price">₹60</span>
+                    </div>
+
+                    <button class="add-btn"
+                            data-product="Britannia Good Day"
+                            data-price="40">
+                        Add
+                    </button>
+                </div>
+
+            </article>
+
+
+            <article class="modern-product">
+
+                <span class="discount-badge">20% OFF</span>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/coca-cola.png"
+                         alt="Coca Cola">
+                </div>
+
+                <h3>Coca Cola</h3>
+                <span class="product-unit">2.25 L</span>
+
+                <div class="price-line">
+                    <div>
+                        <span class="product-price">₹88</span>
+                        <span class="old-price">₹107</span>
+                    </div>
+
+                    <button class="add-btn"
+                            data-product="Coca Cola"
+                            data-price="88">
+                        Add
+                    </button>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BEST SELLERS
+     ========================================================= -->
+
+<section class="modern-section">
+
+    <div class="modern-container">
+
+        <div class="section-heading-modern">
+
+            <h2>🏆 Best Sellers</h2>
+
+            <a href="products.html?sort=bestseller">
+                View All
+            </a>
+
+        </div>
+
+        <div class="product-row">
+
+            <article class="modern-product">
+
+                <span class="rating-badge">★ 4.6</span>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/rice.png"
+                         alt="Basmati Rice">
+                </div>
+
+                <h3>Basmati Rice</h3>
+                <span class="product-unit">1 kg</span>
+
+                <div class="price-line">
+                    <span class="product-price">₹120</span>
+                    <button class="add-btn">Add</button>
+                </div>
+
+            </article>
+
+
+            <article class="modern-product">
+
+                <span class="rating-badge">★ 4.7</span>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/butter.png"
+                         alt="Amul Butter">
+                </div>
+
+                <h3>Amul Butter</h3>
+                <span class="product-unit">500 g</span>
+
+                <div class="price-line">
+                    <span class="product-price">₹245</span>
+                    <button class="add-btn">Add</button>
+                </div>
+
+            </article>
+
+
+            <article class="modern-product">
+
+                <span class="rating-badge">★ 4.5</span>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/tea.png"
+                         alt="Tata Tea Premium">
+                </div>
+
+                <h3>Tata Tea Premium</h3>
+                <span class="product-unit">1 kg</span>
+
+                <div class="price-line">
+                    <span class="product-price">₹530</span>
+                    <button class="add-btn">Add</button>
+                </div>
+
+            </article>
+
+
+            <article class="modern-product">
+
+                <span class="rating-badge">★ 4.6</span>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/biscuits.png"
+                         alt="Parle-G Biscuits">
+                </div>
+
+                <h3>Parle-G Biscuits</h3>
+                <span class="product-unit">800 g</span>
+
+                <div class="price-line">
+                    <span class="product-price">₹70</span>
+                    <button class="add-btn">Add</button>
+                </div>
+
+            </article>
+
+
+            <article class="modern-product">
+
+                <span class="rating-badge">★ 4.5</span>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/noodles.png"
+                         alt="Maggi 2-Minute Noodles">
+                </div>
+
+                <h3>Maggi 2-Min Noodles</h3>
+                <span class="product-unit">280 g</span>
+
+                <div class="price-line">
+                    <span class="product-price">₹24</span>
+                    <button class="add-btn">Add</button>
+                </div>
+
+            </article>
+
+
+            <article class="modern-product">
+
+                <span class="rating-badge">★ 4.4</span>
+
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/soap.png"
+                         alt="Lifebuoy Soap">
+                </div>
+
+                <h3>Lifebuoy Soap</h3>
+                <span class="product-unit">4 × 125 g</span>
+
+                <div class="price-line">
+                    <span class="product-price">₹98</span>
+                    <button class="add-btn">Add</button>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     OFFER BANNERS
+     ========================================================= -->
+
+<section class="modern-section">
+
+    <div class="modern-container">
+
+        <div class="offer-grid">
+
+            <div class="offer-card">
+
+                <div>
+                    <h3>Free Delivery</h3>
+                    <p>On orders above</p>
+                    <strong>₹499</strong>
+                </div>
+
+                <img src="assets/images/delivery.png"
+                     alt="Free Delivery">
+
+            </div>
+
+
+            <div class="offer-card">
+
+                <div>
+                    <h3>First Order Offer</h3>
+                    <p>Flat 20% OFF</p>
+                    <strong>Use Code: RENUFIRST</strong>
+                </div>
+
+                <img src="assets/images/offer.png"
+                     alt="First Order Offer">
+
+            </div>
+
+
+            <div class="offer-card">
+
+                <div>
+                    <h3>Combo Offers</h3>
+                    <p>Save More</p>
+                    <strong>Buy More</strong>
+                </div>
+
+                <img src="assets/images/combo.png"
+                     alt="Combo Offers">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SHOP BY CATEGORY
+     ========================================================= -->
+
+<section class="modern-section">
+
+    <div class="modern-container">
+
+        <div class="section-heading-modern">
+
+            <h2>Shop by Category</h2>
+
+            <a href="products.html">
+                View All
+            </a>
+
+        </div>
+
+        <div class="shop-category-row">
+
+            <a href="products.html?category=fruits" class="shop-category">
+                <div class="shop-category-image">
+                    <img src="file_00000000c2d882118e694c72a60560ac.png"
+                         alt="Fresh Fruits">
+                </div>
+                <span>Fresh Fruits</span>
+            </a>
+
+            <a href="products.html?category=vegetables" class="shop-category">
+                <div class="shop-category-image">
+                    <img src="file_0000000051948207bc971392adc44dbd.png"
+                         alt="Fresh Vegetables">
+                </div>
+                <span>Fresh Vegetables</span>
+            </a>
+
+            <a href="products.html?category=dairy" class="shop-category">
+                <div class="shop-category-image">
+                    <img src="file_00000000d86c8207a9f916fa72b67d53.png"
+                         alt="Dairy Products">
+                </div>
+                <span>Dairy Products</span>
+            </a>
+
+            <a href="products.html?category=breakfast" class="shop-category">
+                <div class="shop-category-image">
+                    <img src="file_00000000d86c8207a9f916fa72b67d53.png"
+                         alt="Breakfast">
+                </div>
+                <span>Breakfast</span>
+            </a>
+
+            <a href="products.html?category=snacks" class="shop-category">
+                <div class="shop-category-image">
+                    <img src="file_00000000eae48207b9b727d513110bf8.png"
+                         alt="Snacks">
+                </div>
+                <span>Snacks</span>
+            </a>
+
+            <a href="products.html?category=beverages" class="shop-category">
+                <div class="shop-category-image">
+                    <img src="file_000000008318820796c7d15036efaec2.png"
+                         alt="Beverages">
+                </div>
+                <span>Beverages</span>
+            </a>
+
+            <a href="products.html?category=personal-care" class="shop-category">
+                <div class="shop-category-image">
+                    <img src="file_00000000d86c8207a9f916fa72b67d53.png"
+                         alt="Personal Care">
+                </div>
+                <span>Personal Care</span>
+            </a>
+
+            <a href="products.html?category=household" class="shop-category">
+                <div class="shop-category-image">
+                    <img src="file_00000000021c821181cc6aaa1bec2bf1.png"
+                         alt="Household">
+                </div>
+                <span>Household</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY CHOOSE RENU STORE
+     ========================================================= -->
+
+<section class="modern-section">
+
+    <div class="modern-container">
+
+        <div class="section-heading-modern">
             <h2>Why Choose Renu Store Pro?</h2>
-            <p>We provide the best grocery shopping experience.</p>
         </div>
 
-        <div class="features-grid">
+        <div class="benefit-row">
 
-            <div class="feature-card">
-                <h3>🚚 Fast Delivery</h3>
-                <p>Quick and reliable doorstep delivery.</p>
+            <div class="benefit">
+                <div class="benefit-icon">🚚</div>
+                <div>
+                    <h4>Fast Delivery</h4>
+                    <p>On time, every time</p>
+                </div>
             </div>
 
-            <div class="feature-card">
-                <h3>🥬 Fresh Products</h3>
-                <p>Daily fresh fruits, vegetables and groceries.</p>
+            <div class="benefit">
+                <div class="benefit-icon">🌿</div>
+                <div>
+                    <h4>Fresh Products</h4>
+                    <p>100% quality guarantee</p>
+                </div>
             </div>
 
-            <div class="feature-card">
-                <h3>💳 Secure Payment</h3>
-                <p>Safe online payment and Cash on Delivery.</p>
+            <div class="benefit">
+                <div class="benefit-icon">🛡️</div>
+                <div>
+                    <h4>Secure Payment</h4>
+                    <p>100% safe & secure</p>
+                </div>
             </div>
 
-            <div class="feature-card">
-                <h3>⭐ Quality Guaranteed</h3>
-                <p>100% genuine and quality-checked products.</p>
+            <div class="benefit">
+                <div class="benefit-icon">↩</div>
+                <div>
+                    <h4>Easy Returns</h4>
+                    <p>Hassle-free returns</p>
+                </div>
             </div>
 
         </div>
@@ -275,33 +1910,125 @@
     </div>
 
 </section>
-<!-- ================= END WHY CHOOSE US ================= -->
-<!-- ================= TESTIMONIALS ================= -->
-<section class="testimonials">
 
-    <div class="container">
 
-        <div class="section-title">
+<!-- =========================================================
+     TESTIMONIALS
+     ========================================================= -->
+
+<section class="modern-section">
+
+    <div class="modern-container">
+
+        <div class="section-heading-modern">
+
             <h2>What Our Customers Say</h2>
-            <p>Trusted by hundreds of happy customers.</p>
+
+            <a href="#">
+                View All
+            </a>
+
         </div>
 
-        <div class="testimonial-grid">
+        <div class="testimonial-row">
 
-            <div class="testimonial-card">
-                <p>"Fresh products and very fast delivery. Highly recommended!"</p>
-                <h4>- Rahul Kumar</h4>
-            </div>
+            <article class="modern-testimonial">
 
-            <div class="testimonial-card">
-                <p>"Best grocery store with affordable prices."</p>
-                <h4>- Priya Sharma</h4>
-            </div>
+                <div class="customer-top">
 
-            <div class="testimonial-card">
-                <p>"Easy ordering process and excellent service."</p>
-                <h4>- Aman Singh</h4>
-            </div>
+                    <img
+                        class="customer-avatar"
+                        src="assets/images/reviews/rahul.jpg"
+                        alt="Rahul Kumar">
+
+                    <div>
+                        <div class="customer-name">
+                            Rahul Kumar
+                        </div>
+
+                        <span class="verified">
+                            ✓ Verified Purchase
+                        </span>
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+
+                </div>
+
+                <p>
+                    Very fresh products and fast delivery.
+                    Highly recommended!
+                </p>
+
+            </article>
+
+
+            <article class="modern-testimonial">
+
+                <div class="customer-top">
+
+                    <img
+                        class="customer-avatar"
+                        src="assets/images/reviews/priya.jpg"
+                        alt="Priya Sharma">
+
+                    <div>
+                        <div class="customer-name">
+                            Priya Sharma
+                        </div>
+
+                        <span class="verified">
+                            ✓ Verified Purchase
+                        </span>
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+
+                </div>
+
+                <p>
+                    Best grocery store with affordable prices
+                    and excellent service.
+                </p>
+
+            </article>
+
+
+            <article class="modern-testimonial">
+
+                <div class="customer-top">
+
+                    <img
+                        class="customer-avatar"
+                        src="assets/images/reviews/aman.jpg"
+                        alt="Aman Singh">
+
+                    <div>
+                        <div class="customer-name">
+                            Aman Singh
+                        </div>
+
+                        <span class="verified">
+                            ✓ Verified Purchase
+                        </span>
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+
+                </div>
+
+                <p>
+                    Easy ordering process and excellent
+                    grocery delivery service.
+                </p>
+
+            </article>
 
         </div>
 
@@ -309,60 +2036,225 @@
 
 </section>
 
-<!-- ================= NEWSLETTER ================= -->
-<section class="newsletter">
 
-    <div class="container">
+<!-- =========================================================
+     NEWSLETTER
+     ========================================================= -->
 
-        <h2>Subscribe to Our Newsletter</h2>
+<section class="modern-section">
 
-        <p>Get updates about new products and special offers.</p>
+    <div class="modern-container">
 
-        <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
+        <div class="newsletter-modern">
+
+            <div>
+                <h2>Get the best offers & updates</h2>
+                <p>Subscribe to our newsletter</p>
+            </div>
+
+            <form class="newsletter-form-modern">
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required>
+
+                <button type="submit">
+                    Subscribe
+                </button>
+
+            </form>
+
+        </div>
 
     </div>
 
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
 
-    <div class="container">
+</main>
 
-        <div class="footer-logo">
-            <h2>Renu Store Pro</h2>
-            <p>Your Trusted Grocery Store.</p>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="modern-footer">
+
+    <div class="modern-container">
+
+        <div class="footer-grid-modern">
+
+            <div class="footer-brand">
+
+                <h2>🛍 Renu Store Pro</h2>
+
+                <p>
+                    Your one-stop shop for all your grocery needs.
+                    We bring quality products to your doorstep.
+                </p>
+
+                <p>
+                    © 2026 Renu Store Pro
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Shop</h3>
+
+                <a href="products.html">All Categories</a>
+                <a href="products.html?category=fruits">Fruits & Vegetables</a>
+                <a href="products.html?category=dairy">Dairy & Breakfast</a>
+                <a href="products.html?category=staples">Staples</a>
+                <a href="products.html?category=snacks">Snacks</a>
+                <a href="products.html?category=beverages">Beverages</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Help & Support</h3>
+
+                <a href="contact.html">Contact Us</a>
+                <a href="faq.html">FAQs</a>
+                <a href="shipping-policy.html">Shipping Policy</a>
+                <a href="return-policy.html">Return Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Account</h3>
+
+                <a href="orders.html">My Orders</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="profile.html">My Profile</a>
+                <a href="orders.html">Track Order</a>
+                <a href="login.html">Login / Signup</a>
+
+            </div>
+
+
+            <div class="footer-column footer-contact">
+
+                <h3>Contact Us</h3>
+
+                <p>📞 +91 XXXXXXXXXX</p>
+                <p>📧 support@renustorepro.in</p>
+                <p>📍 Jamshedpur, Jharkhand<br>831007</p>
+
+            </div>
+
         </div>
 
-        <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
+
+        <div class="footer-bottom-modern">
+
+            <span>
+                © 2026 Renu Store Pro. All Rights Reserved.
+            </span>
+
+            <div class="payment-icons">
+                <span>UPI</span>
+                <span>VISA</span>
+                <span>MC</span>
+                <span>RuPay</span>
+                <span>COD</span>
+            </div>
+
         </div>
-
-        <div class="footer-contact">
-            <p>📍 Jamshedpur, Jharkhand</p>
-            <p>📞 +91 XXXXXXXXXX</p>
-            <p>📧 support@renustorepro.in</p>
-        </div>
-
-        <hr>
-
-        <p class="copyright">
-            © 2026 Renu Store Pro. All Rights Reserved.
-        </p>
 
     </div>
 
 </footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
 <script src="js/app.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/search.js"></script>
 <script src="js/ui.js"></script>
+
+<script>
+
+    /* ============================================
+       Simple Add To Cart UI
+       ============================================ */
+
+    document.querySelectorAll(".add-btn").forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const productName =
+                this.dataset.product || "Product";
+
+            this.textContent = "Added ✓";
+
+            this.style.background = "#087f3f";
+            this.style.color = "#fff";
+
+            setTimeout(() => {
+                this.textContent = "Add";
+                this.style.background = "";
+                this.style.color = "";
+            }, 1200);
+
+            /* Use existing cart.js if available */
+            if (typeof addToCart === "function") {
+
+                addToCart({
+                    name: productName,
+                    price: Number(this.dataset.price || 0),
+                    quantity: 1
+                });
+
+            }
+
+        });
+
+    });
+
+
+    /* ============================================
+       Newsletter
+       ============================================ */
+
+    const newsletterForm =
+        document.querySelector(".newsletter-form-modern");
+
+    if (newsletterForm) {
+
+        newsletterForm.addEventListener("submit", function(e) {
+
+            e.preventDefault();
+
+            const email =
+                this.querySelector("input").value.trim();
+
+            if (!email) return;
+
+            alert(
+                "Thank you for subscribing to Renu Store Pro!"
+            );
+
+            this.reset();
+
+        });
+
+    }
+
+</script>
+
 </body>
 </html>
