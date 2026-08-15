@@ -1,0 +1,141 @@
+/* ==========================================================================
+   Renu Store Pro - Responsive Stylesheet
+   ========================================================================== */
+
+/* Large Screens & Laptops */
+@media (max-width: 1200px) {
+    .container {
+        width: 92%;
+    }
+}
+
+/* Tablets & Small Laptops */
+@media (max-width: 992px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .cart-layout,
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-buttons {
+        justify-content: stretch;
+        flex-direction: column;
+    }
+
+    .cart-buttons .btn,
+    .cart-buttons .checkout-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .header-icons, .header-actions {
+        gap: 0.8rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 65px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 65px);
+        background-color: var(--bg-card);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.8rem;
+        transition: left 0.3s ease-in-out;
+        border-top: 1px solid var(--border-color);
+        z-index: 999;
+    }
+
+    .navbar.show {
+        left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .cart-item {
+        grid-template-columns: 60px 1fr;
+        gap: 1rem;
+        position: relative;
+        padding-right: 2.5rem;
+    }
+
+    .cart-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cart-qty {
+        margin-top: 0.5rem;
+    }
+
+    .cart-price {
+        font-weight: 600;
+    }
+
+    .remove-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+}
+
+/* Small Smartphones */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-tag {
+        font-size: 0.8rem;
+    }
+
+    .auth-box {
+        padding: 1.5rem;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
